@@ -10,17 +10,17 @@ import random
 def generate_equation():
     var = random.choice(['x', 'y', 'z'])
     coeff = random.randint(1, 5)
-    c = random.randint(1, 5)  # Adjusted to generate positive constants only
-    operator = random.choice(['+', '-', '*', '/'])  # Added multiplication and division
+    c = random.randint(1, 5)
+    operator = random.choice(['+', '-', '*', '/'])
     rhs = random.randint(1, 5)
 
     if operator == '+':
         lhs = coeff * rhs + c
     elif operator == '-':
         lhs = coeff * rhs - c
-    elif operator == '*':  # For multiplication
+    elif operator == '*':
         lhs = coeff * rhs * c
-    elif operator == '/':  # For division
+    elif operator == '/':
         # Ensure rhs and c are not equal to zero to avoid division by zero
         if rhs == 0:
             rhs = 1
