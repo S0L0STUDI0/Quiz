@@ -31,15 +31,16 @@ def main():
     user_answer = input("Your answer for the variable: ")
 
     try:
-        user_answer = int(user_answer)
-        if user_answer == correct_answer:
+        # Evaluating the user's expression to check if it satisfies the equation
+        if eval(user_answer) == correct_answer:
             print("Correct!")
         else:
             print("Incorrect. The correct answer is:", correct_answer)
-    except ValueError:
-        print("Please enter a valid integer.")
+    except (NameError, SyntaxError):
+        print("Please enter a valid expression for the variable.")
 
 if __name__ == "__main__":
     main()
+
 #Developed in 2024 - SoloStudio, GPT3.5
 #SoloStudio
